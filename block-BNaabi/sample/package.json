@@ -1,8 +1,11 @@
-// {
-//     "name"  : "sample",
-//      "version" : "0.1.1",
-//      "description" : "hey this package is created by my self",
-//      "main": "",
-//      "author" : "Rahul Mandyal" ,
 
-// }
+{
+    "name": "my_package",
+    "description": "",
+    "version": "1.0.0",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": ""
+
+}
