@@ -1,9 +1,10 @@
 let express = require("express");
 let app = express();
+let date = new Date();
 
 // Creating our own middelwares function like morgan
 app.use((req, res, next) => {
-  console.log(req.method + req.url);
+  console.log(req.method + req.url + date.getMilliseconds());
   next();
 });
 
