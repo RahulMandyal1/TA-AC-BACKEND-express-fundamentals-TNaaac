@@ -5,7 +5,7 @@ let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 
 //for the static path 
-app.use(express.static(__dirname+'public/'))
+app.use(express.static(__dirname+'/public'))
 // using some middelwares 
 app.use(cookieParser());
 //logger to log every request 
@@ -16,6 +16,10 @@ app.use((req ,res ,next)=>{
     next();
 })
 
+// Handling  the users Route 
+app.get('/users' ,(req ,res)=>{
+    res.send('Users page is here ...');
+})
 // Renderend index.html page on the  / Route
 app.get('/',(req ,res)=>{
     res.sendFile(__dirname+'/index.html');
@@ -26,8 +30,9 @@ app.get('/project',(req ,res)=>{
 })
 
 // Error handling   
-app.use((err , req ,res ,next)=>{
-    res.send(err);
+app.use((req ,res ,next)=>{
+    res.send('Page not found');
+    next();
 })
 // listening  the request on  the 8K port 
 app.listen(8000 ,()=>{
